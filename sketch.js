@@ -1,3 +1,42 @@
+var string = "Dishant";
+console.log(string);
+
+var num = 19;
+console.log(num);
+
+var bool = true;
+console.log(bool);
+
+var object;
+console.log(object);
+
+object = null;
+console.log(object);
+
+var arr1 = [1,2,3,4,5,6,7,8];
+console.log(arr1);
+
+var arr2 = [19,"name", true, string];
+console.log(arr2);
+
+console.log(arr1[5]);
+console.log(arr2[2]);
+
+var arr3 = [[2,4,6], [1,3,5,7], [7,3,5,2,9]];
+console.log(arr3[0][1]);
+console.log(arr3[2][4]);
+
+arr2.push("School");
+console.log(arr2);
+
+arr1.pop();
+console.log(arr1);
+ 
+var gameState="onsling";
+
+
+
+
 const Engine = Matter.Engine;
 const World= Matter.World;
 const Bodies = Matter.Bodies;
@@ -69,16 +108,19 @@ function draw(){
 }
 
 function mouseDragged(){
+    if(gameState==="onsling"){
     Matter.Body.setPosition(bird.body, {x: mouseX , y: mouseY});
+}
 }
 
 
 function mouseReleased(){
     slingshot.fly();
+    gameState="launch";
 }
 
-function keyPressed(){
+/*function keyPressed(){
     if(keyCode === 32){
         slingshot.attach(bird.body);
     }
-}
+}*/
